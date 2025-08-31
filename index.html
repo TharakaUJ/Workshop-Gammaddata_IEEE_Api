@@ -327,6 +327,25 @@
         .reveal-btn:active {
             scale: 1;
         }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+
+            &::after {
+                content: "Copied!";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #2d3748;
+                color: #e2e8f0;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                white-space: nowrap;
+                z-index: 10;
+            }
+        }
+
     </style>
 </head>
 
@@ -455,37 +474,28 @@
                         <h3>Introduction to the Web</h3>
                     </div>
                     <p>Understand how websites work by exploring interactive games and modifying live pages.</p>
+
+                    <button class="reveal-btn"
+                        onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                        <ul class="activity-list">
+                            <li>Learn HTML basics (structure) and CSS basics (styles)</li>
+                            <li>Activity: Modify a webpage using DevTools</li>
+                            <li>Change colors, text, and layouts in real-time</li>
+                        </ul>
+                    </button>
+                    <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                        Here is a sample site to play around with! This is the default page you get when you create a
+                        new
+                        project using <strong>Vite</strong>, a modern web framework for building fast web apps. <a
+                            href="./vite/index.html" target="_blank">open in new tab</a>
+                        <br><br>
+                        <iframe src="./vite/index.html" width="100%" height="400"
+                            style="border:1px solid #ccc; border-radius:10px;" title="Vite Sample Page"></iframe>
+                    </div>
+
                     <ul class="activity-list">
                         <li>Explore an interactive browser game</li>
-                        <li>Learn HTML basics (structure) and CSS basics (styles)</li>
-                        <li>Activity: Modify a webpage using DevTools</li>
-                        <li>Change colors, text, and layouts in real-time</li>
                     </ul>
-
-                    <div class="code-block">
-                        <span class="language-label">HTML + CSS</span>
-                        <span class="keyword">&lt;!DOCTYPE html&gt;</span>
-                        <span class="keyword">&lt;html&gt;</span>
-                        <span class="keyword">&lt;head&gt;</span>
-                        <span class="keyword">&lt;style&gt;</span>
-                        .<span class="string">game-button</span> {
-                        background: <span class="string">linear-gradient(45deg, #ff6b6b, #4ecdc4)</span>;
-                        border: <span class="string">none</span>;
-                        padding: <span class="string">15px 30px</span>;
-                        border-radius: <span class="string">25px</span>;
-                        color: <span class="string">white</span>;
-                        font-size: <span class="string">18px</span>;
-                        cursor: <span class="string">pointer</span>;
-                        }
-                        <span class="keyword">&lt;/style&gt;</span>
-                        <span class="keyword">&lt;/head&gt;</span>
-                        <span class="keyword">&lt;body&gt;</span>
-                        <span class="keyword">&lt;button</span> <span class="string">class=</span><span
-                            class="string">"game-button"</span><span class="keyword">&gt;</span>Click Me!<span
-                            class="keyword">&lt;/button&gt;</span>
-                        <span class="keyword">&lt;/body&gt;</span>
-                        <span class="keyword">&lt;/html&gt;</span>
-                    </div>
 
                     <div style="display: flex; justify-content: center;">
                         <iframe src="./dinogame/index.html" width="600" height="400" title="Dino Game Demo"></iframe>
@@ -505,11 +515,51 @@
                     <ul class="activity-list">
                         <li>Run scripts in the browser console</li>
                         <li>Fun automation demo: "Send repeated messages" example</li>
-                        <li>Fun hack: "Cheat a typing speed test" with JS</li>
-                        <li>Understand DOM manipulation and events</li>
+                        <li>
+
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Fun hack: <a href="https://play.typeracer.com/" class="code-link">"Cheat a typing speed
+                                    test"</a> with JS
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <span>Prank: Fast Typing Script</span>
+                                <strong>Steps:</strong>
+                                <p>
+                                    Go to <a href="https://play.typeracer.com/"
+                                        target="_blank">https://play.typeracer.com/</a><br>
+
+                                    Open up your browser console (<kbd>Ctrl+Shift+J</kbd> or <kbd>F12</kbd>)<br>
+                                    Paste the following code into the console right before the race starts:
+                                </p>
+                                <div style="position: relative;">
+                                    <pre id="typeracer-code"
+                                        style="background:#2d3748;color:#e2e8f0;border-radius:8px;overflow-x:auto; text-align: left;">
+<span class="comment">// Copy and paste this in the console</span>
+var n=document.querySelectorAll('[unselectable="on"]');
+var t="";
+n.forEach(function(n){t+=n.innerHTML});
+var e=0;
+document.getElementsByClassName("txtInput")[0].addEventListener("keypress",function(n){
+    n.preventDefault();
+    this.value+=t[e++];
+});
+                                    </pre>
+                                    <button onclick="copyTyperacerCode()"
+                                        style="position:absolute;top:10px;right:10px;background:#4CAF50;color:white;border:none;padding:8px 12px;border-radius:4px;cursor:pointer;font-size:12px;transition:background 0.3s ease;"
+                                        class="copy-btn" onmouseover="this.style.background='#45a049'"
+                                        onmouseout="this.style.background='#4CAF50'" title="Copy code to clipboard">
+                                        📋 Copy
+                                    </button>
+                                </div>
+                                <strong>Enjoy!</strong>
+                            </div>
+
+                        </li>
+                        <!-- <li>Understand DOM manipulation and events</li> -->
                     </ul>
 
-                    <div class="code-block">
+                    <!-- <div class="code-block">
                         <span class="language-label">JavaScript</span>
                         <span class="comment">// Fun typing speed hack</span>
                         <span class="keyword">const</span> textToType = <span class="string">"The quick brown fox jumps
@@ -526,7 +576,8 @@
                             } <span class="keyword">else</span> {
                             <span class="keyword">clearInterval</span>(typeInterval);
                             <span class="keyword">console</span>.<span class="keyword">log</span>(<span
-                                class="string">"🚀 Superhuman typing complete!"</span>);
+                                class="string">"🚀
+                                Superhuman typing complete!"</span>);
                             }
                             }, <span class="number">50</span>); <span class="comment">// 50ms between each
                                 character</span>
@@ -534,7 +585,7 @@
 
                     <div class="placeholder">
                         [PLACEHOLDER: Interactive Console Demo]
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="activity-card">
@@ -746,6 +797,51 @@
                 }
             });
         });
+
+        // Copy TypeRacer code function
+        function copyTyperacerCode() {
+            const codeText = `var n=document.querySelectorAll('[unselectable="on"]');
+var t="";
+n.forEach(function(n){t+=n.innerHTML});
+var e=0;
+document.getElementsByClassName("txtInput")[0].addEventListener("keypress",function(n){
+    n.preventDefault();
+    this.value+=t[e++];
+});`;
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                // Visual feedback
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅ Copied!';
+                button.style.background = '#28a745';
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '#4CAF50';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = codeText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+
+                // Visual feedback
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅ Copied!';
+                button.style.background = '#28a745';
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '#4CAF50';
+                }, 2000);
+            });
+        }
     </script>
 </body>
 
