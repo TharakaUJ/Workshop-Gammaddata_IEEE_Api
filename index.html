@@ -345,7 +345,6 @@
                 z-index: 10;
             }
         }
-
     </style>
 </head>
 
@@ -556,36 +555,7 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
                             </div>
 
                         </li>
-                        <!-- <li>Understand DOM manipulation and events</li> -->
                     </ul>
-
-                    <!-- <div class="code-block">
-                        <span class="language-label">JavaScript</span>
-                        <span class="comment">// Fun typing speed hack</span>
-                        <span class="keyword">const</span> textToType = <span class="string">"The quick brown fox jumps
-                            over the lazy dog"</span>;
-                        <span class="keyword">const</span> inputField = <span class="keyword">document</span>.<span
-                            class="keyword">querySelector</span>(<span class="string">'input[type="text"]'</span>);
-
-                        <span class="keyword">let</span> index = <span class="number">0</span>;
-                        <span class="keyword">const</span> typeInterval = <span class="keyword">setInterval</span>(() =>
-                        {
-                        <span class="keyword">if</span> (index < textToType.<span class="keyword">length</span>) {
-                            inputField.<span class="keyword">value</span> += textToType[index];
-                            index++;
-                            } <span class="keyword">else</span> {
-                            <span class="keyword">clearInterval</span>(typeInterval);
-                            <span class="keyword">console</span>.<span class="keyword">log</span>(<span
-                                class="string">"🚀
-                                Superhuman typing complete!"</span>);
-                            }
-                            }, <span class="number">50</span>); <span class="comment">// 50ms between each
-                                character</span>
-                    </div>
-
-                    <div class="placeholder">
-                        [PLACEHOLDER: Interactive Console Demo]
-                    </div> -->
                 </div>
 
                 <div class="activity-card">
@@ -595,15 +565,33 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
                     </div>
                     <p>Get a sneak peek at tomorrow's hardware adventures with Arduino/ESP32 simulation.</p>
                     <ul class="activity-list">
-                        <li>Introduce Arduino/ESP32 concepts</li>
-                        <li>Explore the Wokwi simulator interface</li>
-                        <li>Simple LED blinking example</li>
+                        <li>
+
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Introduce Arduino/ESP32 concepts
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                Arduino is a popular open-source electronics platform based on easy-to-use hardware and
+                                software. ESP32 is a powerful microcontroller with built-in WiFi and Bluetooth, perfect
+                                for IoT projects. Both use C/C++ programming languages, making them great for learning
+                                embedded systems and hardware control.
+                            </div>
+                        </li>
+                        <li>Explore the <a href="https://wokwi.com/" target="_blank">Wokwi simulator interface</a></li>
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Simple LED blinking example
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <iframe src="https://wokwi.com/projects/344891652101374548" width="100%" height="356"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                            </div>
+
+                        </li>
                         <li>Understanding digital pins and signals</li>
                     </ul>
-
-                    <div class="placeholder">
-                        [PLACEHOLDER: Arduino Simulator Demo]
-                    </div>
                 </div>
             </div>
         </div>
