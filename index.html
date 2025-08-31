@@ -332,7 +332,8 @@
             }
 
             /* Local iframe adjustments */
-            iframe[src*="./dinogame/"], iframe[src*="./vite/"] {
+            iframe[src*="./dinogame/"],
+            iframe[src*="./vite/"] {
                 width: 100% !important;
                 height: 250px !important;
                 max-width: 100%;
@@ -408,11 +409,13 @@
                 height: 280px !important;
             }
 
-            iframe[src*="trinket.io"], iframe[src*="wokwi.com"] {
+            iframe[src*="trinket.io"],
+            iframe[src*="wokwi.com"] {
                 height: 250px !important;
             }
 
-            iframe[src*="./dinogame/"], iframe[src*="./vite/"] {
+            iframe[src*="./dinogame/"],
+            iframe[src*="./vite/"] {
                 height: 200px !important;
             }
 
@@ -553,8 +556,8 @@
                         <span class="activity-icon">🐍</span>
                         <h3>Transition to Python</h3>
                     </div>
-                    <iframe src="https://trinket.io/library/trinkets/096ef37d7230" width="100%" height="356" frameborder="0"
-                        marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <iframe src="https://trinket.io/library/trinkets/096ef37d7230" width="100%" height="356"
+                        frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
                     <p>Discover why Python is powerful and learn fundamental programming concepts with real code.</p>
                     <ul class="activity-list">
@@ -670,7 +673,8 @@
 
                             <button class="reveal-btn"
                                 onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
-                                Fun hack: <a href="https://play.typeracer.com/" target="_blank" class="code-link">"Cheat a typing speed
+                                Fun hack: <a href="https://play.typeracer.com/" target="_blank" class="code-link">"Cheat
+                                    a typing speed
                                     test"</a> with JS
                             </button>
                             <div class="placeholder" style="display:none; margin-top:0.5rem;">
@@ -684,9 +688,9 @@
                                     Paste the following code into the console right before the race starts:
                                 </p>
                                 <div style="position: relative;">
+                                    <span class="comment">// Copy and paste this in the console</span>
                                     <pre id="typeracer-code"
                                         style="background:#2d3748;color:#e2e8f0;border-radius:8px;overflow-x:auto; text-align: left; position: relative;">
-<span class="comment">// Copy and paste this in the console</span>
 var n=document.querySelectorAll('[unselectable="on"]');
 var t="";
 n.forEach(function(n){t+=n.innerHTML});
@@ -696,7 +700,7 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
     this.value+=t[e++];
 });
                                     </pre>
-                                    <button onclick="copyTyperacerCode()"
+                                    <button onclick="copyTyperacerCode(this)"
                                         style="position:absolute;top:10px;right:10px;background:#4CAF50;color:white;border:none;padding:8px 12px;border-radius:4px;cursor:pointer;font-size:12px;transition:background 0.3s ease;z-index:5;"
                                         class="copy-btn" onmouseover="this.style.background='#45a049'"
                                         onmouseout="this.style.background='#4CAF50'" title="Copy code to clipboard">
@@ -742,7 +746,15 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
                             </div>
 
                         </li>
-                        <li>Understanding digital pins and signals</li>
+                        <li><a href="https://youtu.be/SX8z3-BEuWQ?si=pOImDrZuVjbe7lls" target="_blank">Setting up</a>
+                            Arduino IDE</li>
+                        <li><a>or install platformIo with vscode</a></li>
+                        <li><a href="https://youtu.be/ikBlhX-erSw?si=30WOrcqNwjyiONj8" target="_blank">Installing</a>
+                            ESP32 board in Arduino IDE</li>
+
+                        <li>Check out Official Arduino documentation for more details or watch <a
+                                href="https://youtu.be/JnJIKX5J0Cc?si=Bd2zYK-nGpv6epfJ" target="_blank">videos</a> from
+                            SunFounder</li>
                     </ul>
                 </div>
             </div>
@@ -767,37 +779,41 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
                     </div>
                     <p>Master the basics of hardware control with simple but satisfying projects.</p>
                     <ul class="activity-list">
-                        <li>Blink an LED (the "Hello World" of hardware)</li>
-                        <li>LDR sensor experiments (light sensitivity)</li>
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Blink an LED (the "Hello World" of hardware)
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <iframe src="https://wokwi.com/projects/343686861529547347" width="100%" height="356"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                            </div>
+                        </li>
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                LDR sensor experiments (light sensitivity)
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <iframe src="https://wokwi.com/projects/440842062985930753" width="100%" height="356"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                            </div>
+                        </li>
+
                         <li>Try different LED patterns and timings</li>
-                        <li>Understanding digital vs analog signals</li>
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Understanding digital vs analog signals
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                Analog signals are used when reading values from sensors like the LDR (Light Dependent
+                                Resistor), which can detect a range of light levels. Digital signals are used when
+                                writing or reading HIGH and LOW states, such as turning LEDs on or off or checking if a
+                                button is pressed.
+                            </div>
+                        </li>
                     </ul>
-
-                    <div class="code-block">
-                        <span class="language-label">C++ (Arduino)</span>
-                        <span class="keyword">#define</span> LED_PIN <span class="number">2</span>
-                        <span class="keyword">#define</span> LDR_PIN <span class="number">A0</span>
-
-                        <span class="keyword">void</span> <span class="string">setup</span>() {
-                        <span class="keyword">pinMode</span>(LED_PIN, OUTPUT);
-                        <span class="keyword">Serial</span>.<span class="string">begin</span>(<span
-                            class="number">115200</span>);
-                        }
-
-                        <span class="keyword">void</span> <span class="string">loop</span>() {
-                        <span class="keyword">int</span> lightLevel = <span class="keyword">analogRead</span>(LDR_PIN);
-
-                        <span class="keyword">if</span> (lightLevel < <span class="number">500</span>) {
-                            <span class="keyword">digitalWrite</span>(LED_PIN, HIGH); <span class="comment">// Turn on
-                                in darkness</span>
-                            } <span class="keyword">else</span> {
-                            <span class="keyword">digitalWrite</span>(LED_PIN, LOW); <span class="comment">// Turn off
-                                in light</span>
-                            }
-
-                            <span class="keyword">delay</span>(<span class="number">100</span>);
-                            }
-                    </div>
                 </div>
 
                 <div class="activity-card">
@@ -807,7 +823,16 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
                     </div>
                     <p>Level up with more sophisticated sensors and data collection.</p>
                     <ul class="activity-list">
-                        <li>DHT sensor demo (temperature/humidity)</li>
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                DHT sensor demo (temperature/humidity)
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <iframe src="https://wokwi.com/projects/440842750512077825" width="100%" height="356"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                            </div>
+                        </li>
                         <li>Display readings on serial monitor</li>
                         <li>Create a simple weather station</li>
                         <li>Log data and track changes over time</li>
@@ -821,41 +846,22 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
                     </div>
                     <p>Create an interactive IoT music player that responds to remote commands!</p>
                     <ul class="activity-list">
-                        <li>Connect a buzzer and play music</li>
-                        <li>Use ChatGPT to generate new songs</li>
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Connect a buzzer and play music
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <iframe src="https://wokwi.com/projects/440843342280173569" width="100%" height="356"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                            </div>
+                        </li>
+                        <li>Use ChatGPT to generate new songs or <a href="https://github.com/hibit-dev/buzzer">Check this link</a></li>
+
                         <li>Connect to a server</li>
                         <li>Let people pick which audio to play remotely</li>
                         <li>Build a complete IoT music system</li>
                     </ul>
-
-                    <div class="code-block">
-                        <span class="language-label">C++ (Arduino)</span>
-                        <span class="keyword">#include</span> <span class="string">&lt;WiFi.h&gt;</span>
-                        <span class="keyword">#define</span> BUZZER_PIN <span class="number">25</span>
-
-                        <span class="comment">// Musical notes (frequencies in Hz)</span>
-                        <span class="keyword">const</span> <span class="keyword">int</span> C4 = <span
-                            class="number">262</span>, D4 = <span class="number">294</span>, E4 = <span
-                            class="number">330</span>, F4 = <span class="number">349</span>;
-
-                        <span class="keyword">void</span> <span class="string">playTwinkleTwinkle</span>() {
-                        <span class="keyword">int</span> melody[] = {C4, C4, G4, G4, A4, A4, G4};
-                        <span class="keyword">int</span> durations[] = {<span class="number">4</span>, <span
-                            class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span
-                            class="number">4</span>, <span class="number">4</span>, <span class="number">2</span>};
-
-                        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span
-                            class="number">0</span>; i < <span class="number">7</span>; i++) {
-                            <span class="keyword">tone</span>(BUZZER_PIN, melody[i], <span class="number">1000</span> /
-                            durations[i]);
-                            <span class="keyword">delay</span>(<span class="number">1200</span> / durations[i]);
-                            }
-                            }
-                    </div>
-
-                    <div class="placeholder">
-                        [PLACEHOLDER: ESP32 Live Demo]
-                    </div>
                 </div>
             </div>
         </div>
@@ -939,15 +945,8 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
         });
 
         // Copy TypeRacer code function
-        function copyTyperacerCode() {
-            const codeText = `var n=document.querySelectorAll('[unselectable="on"]');
-var t="";
-n.forEach(function(n){t+=n.innerHTML});
-var e=0;
-document.getElementsByClassName("txtInput")[0].addEventListener("keypress",function(n){
-    n.preventDefault();
-    this.value+=t[e++];
-});`;
+        function copyTyperacerCode(event) {
+            const codeText = event.parentElement.querySelector('pre').innerText;
 
             navigator.clipboard.writeText(codeText).then(() => {
                 // Visual feedback
