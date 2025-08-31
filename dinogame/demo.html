@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Game Auto-Jump Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .controls {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .highlight {
+            color: #569cd6;
+        }
+        .comment {
+            color: #6a9955;
+        }
+        .string {
+            color: #ce9178;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦖 Dino Game Auto-Jump Script</h1>
+        
+        <p>This script automatically detects obstacles in the Chrome Dino game by analyzing canvas pixels and triggers jumps to avoid them.</p>
+
+        <div class="warning">
+            <strong>⚠️ Important:</strong> This script is for educational purposes only. Use it to understand how canvas pixel detection works in JavaScript!
+        </div>
+
+        <h2>🚀 How to Use</h2>
+        <ol>
+            <li>Open Chrome and go to <code>chrome://dino/</code> or disconnect your internet and try to browse</li>
+            <li>Open Developer Tools (F12)</li>
+            <li>Go to the Console tab</li>
+            <li>Copy and paste the auto-jump script</li>
+            <li>Start the dino game by pressing Space</li>
+            <li>Press 'A' for advanced auto-jumper or 'S' for simple version</li>
+        </ol>
+
+        <div class="controls">
+            <h3>🎮 Controls</h3>
+            <ul>
+                <li><strong>A key:</strong> Toggle advanced auto-jumper (with debug options)</li>
+                <li><strong>S key:</strong> Toggle simple auto-jumper</li>
+                <li><strong>Space:</strong> Manual jump (when auto-jump is off)</li>
+            </ul>
+        </div>
+
+        <h2>🧠 How It Works</h2>
+        <p>The script uses two main approaches:</p>
+
+        <h3>1. Advanced Canvas Analysis</h3>
+        <div class="code-block">
+<span class="comment">// Scans a specific region ahead of the dino</span>
+<span class="highlight">const</span> imageData = ctx.<span class="highlight">getImageData</span>(
+    <span class="string">100</span>, <span class="comment">// x position (ahead of dino)</span>
+    <span class="string">110</span>, <span class="comment">// y position (ground level)</span>
+    <span class="string">80</span>,  <span class="comment">// width of scan area</span>
+    <span class="string">30</span>   <span class="comment">// height of scan area</span>
+);
+
+<span class="comment">// Count dark pixels (obstacles are darker than ground)</span>
+<span class="highlight">for</span> (<span class="highlight">let</span> i = <span class="string">0</span>; i &lt; data.length; i += <span class="string">4</span>) {
+    <span class="highlight">const</span> brightness = (data[i] + data[i+<span class="string">1</span>] + data[i+<span class="string">2</span>]) / <span class="string">3</span>;
+    <span class="highlight">if</span> (brightness &lt; <span class="string">200</span>) darkPixels++;
+}
+        </div>
+
+        <h3>2. Simple Pixel Detection</h3>
+        <div class="code-block">
+<span class="comment">// Quick scan of a fixed area</span>
+<span class="highlight">const</span> pixels = ctx.<span class="highlight">getImageData</span>(<span class="string">150</span>, <span class="string">125</span>, <span class="string">50</span>, <span class="string">25</span>);
+<span class="highlight">if</span> (darkPixels &gt; threshold) {
+    <span class="comment">// Simulate spacebar press</span>
+    <span class="highlight">const</span> event = <span class="highlight">new</span> <span class="highlight">KeyboardEvent</span>(<span class="string">'keydown'</span>, { keyCode: <span class="string">32</span> });
+    document.<span class="highlight">dispatchEvent</span>(event);
+}
+        </div>
+
+        <h2>🔧 Debug Features</h2>
+        <p>The advanced version includes debugging tools:</p>
+        <div class="code-block">
+<span class="comment">// Enable visual debugging</span>
+autoJumper.<span class="highlight">enableDebug</span>();
+
+<span class="comment">// Adjust detection sensitivity</span>
+autoJumper.<span class="highlight">adjustThreshold</span>(<span class="string">30</span>);
+
+<span class="comment">// Change scan region</span>
+autoJumper.<span class="highlight">adjustScanRegion</span>(<span class="string">120</span>, <span class="string">115</span>, <span class="string">60</span>, <span class="string">25</span>);
+        </div>
+
+        <h2>📝 Complete Script</h2>
+        <p>Copy this entire script into the browser console:</p>
+        
+        <button onclick="copyScript()">📋 Copy Script to Clipboard</button>
+        
+        <div class="code-block" id="fullScript">
+            <div style="max-height: 300px; overflow-y: scroll;">
+                <!-- The full script will be loaded here -->
+                Loading script...
+            </div>
+        </div>
+
+        <h2>🎯 Tips for Best Results</h2>
+        <ul>
+            <li><strong>Adjust threshold:</strong> Lower values = more sensitive, higher = less sensitive</li>
+            <li><strong>Fine-tune scan region:</strong> Position it where obstacles first appear</li>
+            <li><strong>Use debug mode:</strong> See exactly what the script is detecting</li>
+            <li><strong>Test both versions:</strong> Simple might work better on some screens</li>
+        </ul>
+
+        <div class="warning">
+            <strong>🎓 Educational Value:</strong> This demonstrates important concepts:
+            <ul>
+                <li>Canvas pixel manipulation with getImageData()</li>
+                <li>Image processing and brightness calculation</li>
+                <li>Event simulation and game automation</li>
+                <li>Real-time computer vision basics</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Load the full script content for display
+        fetch('auto-jump.js')
+            .then(response => response.text())
+            .then(script => {
+                document.getElementById('fullScript').innerHTML = 
+                    '<pre style="margin: 0; white-space: pre-wrap;">' + 
+                    escapeHtml(script) + 
+                    '</pre>';
+            })
+            .catch(() => {
+                document.getElementById('fullScript').innerHTML = 
+                    '<p style="color: #ff6b6b;">Could not load script. Please check auto-jump.js file.</p>';
+            });
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function copyScript() {
+            fetch('auto-jump.js')
+                .then(response => response.text())
+                .then(script => {
+                    navigator.clipboard.writeText(script).then(() => {
+                        alert('✅ Script copied to clipboard! Paste it in the browser console.');
+                    });
+                })
+                .catch(() => {
+                    alert('❌ Could not copy script. Please copy manually from the code block below.');
+                });
+        }
+    </script>
+</body>
+</html>
