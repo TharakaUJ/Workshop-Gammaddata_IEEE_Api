@@ -25,6 +25,19 @@
             padding: 0 20px;
         }
 
+        /* Mobile container adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -288,6 +301,145 @@
             .activity-card {
                 padding: 1.5rem;
             }
+
+            /* Mobile iframe responsiveness */
+            iframe {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto !important;
+                min-height: 300px;
+            }
+
+            /* Adjust Scratch embeds for mobile */
+            iframe[src*="scratch.mit.edu"] {
+                width: 100% !important;
+                height: 350px !important;
+                max-width: 100%;
+            }
+
+            /* Adjust Trinket embeds for mobile */
+            iframe[src*="trinket.io"] {
+                width: 100% !important;
+                height: 300px !important;
+                max-width: 100%;
+            }
+
+            /* Adjust Wokwi embeds for mobile */
+            iframe[src*="wokwi.com"] {
+                width: 100% !important;
+                height: 300px !important;
+                max-width: 100%;
+            }
+
+            /* Local iframe adjustments */
+            iframe[src*="./dinogame/"], iframe[src*="./vite/"] {
+                width: 100% !important;
+                height: 250px !important;
+                max-width: 100%;
+            }
+
+            /* Adjust code blocks for mobile */
+            .code-block {
+                font-size: 0.8rem;
+                padding: 1rem;
+                overflow-x: auto;
+            }
+
+            /* Adjust pre elements for mobile */
+            pre {
+                font-size: 0.7rem !important;
+                overflow-x: auto;
+                white-space: pre-wrap;
+                word-break: break-word;
+            }
+
+            /* Copy button adjustments for mobile */
+            .copy-btn {
+                position: static !important;
+                display: block;
+                margin: 10px auto 0;
+                width: 100px;
+            }
+
+            /* Resource grid adjustments */
+            .resource-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            /* Activity list adjustments */
+            .activity-list li {
+                padding-left: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            /* Placeholder adjustments */
+            .placeholder {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .day-header h2 {
+                font-size: 1.7rem;
+            }
+
+            .activity-card {
+                padding: 1rem;
+                margin: 0 5px;
+            }
+
+            .activity-card h3 {
+                font-size: 1.5rem;
+            }
+
+            /* Further reduce iframe heights on very small screens */
+            iframe[src*="scratch.mit.edu"] {
+                height: 280px !important;
+            }
+
+            iframe[src*="trinket.io"], iframe[src*="wokwi.com"] {
+                height: 250px !important;
+            }
+
+            iframe[src*="./dinogame/"], iframe[src*="./vite/"] {
+                height: 200px !important;
+            }
+
+            /* Code block adjustments for very small screens */
+            .code-block {
+                font-size: 0.7rem;
+                padding: 0.8rem;
+            }
+
+            pre {
+                font-size: 0.6rem !important;
+            }
+
+            /* Navigation adjustments */
+            nav {
+                padding: 0.5rem 0;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+                padding: 0 10px;
+            }
+
+            nav a {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.9rem;
+            }
         }
 
         /* Smooth scrolling */
@@ -533,7 +685,7 @@
                                 </p>
                                 <div style="position: relative;">
                                     <pre id="typeracer-code"
-                                        style="background:#2d3748;color:#e2e8f0;border-radius:8px;overflow-x:auto; text-align: left;">
+                                        style="background:#2d3748;color:#e2e8f0;border-radius:8px;overflow-x:auto; text-align: left; position: relative;">
 <span class="comment">// Copy and paste this in the console</span>
 var n=document.querySelectorAll('[unselectable="on"]');
 var t="";
@@ -545,7 +697,7 @@ document.getElementsByClassName("txtInput")[0].addEventListener("keypress",funct
 });
                                     </pre>
                                     <button onclick="copyTyperacerCode()"
-                                        style="position:absolute;top:10px;right:10px;background:#4CAF50;color:white;border:none;padding:8px 12px;border-radius:4px;cursor:pointer;font-size:12px;transition:background 0.3s ease;"
+                                        style="position:absolute;top:10px;right:10px;background:#4CAF50;color:white;border:none;padding:8px 12px;border-radius:4px;cursor:pointer;font-size:12px;transition:background 0.3s ease;z-index:5;"
                                         class="copy-btn" onmouseover="this.style.background='#45a049'"
                                         onmouseout="this.style.background='#4CAF50'" title="Copy code to clipboard">
                                         📋 Copy
