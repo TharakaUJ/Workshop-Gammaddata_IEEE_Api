@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +34,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -81,7 +82,7 @@
 
         .hero .dates {
             font-size: 1.1rem;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             padding: 1rem 2rem;
             border-radius: 30px;
             display: inline-block;
@@ -95,11 +96,11 @@
         }
 
         .day-section:nth-child(even) {
-            background: rgba(255,255,255,0.7);
+            background: rgba(255, 255, 255, 0.7);
         }
 
         .day-section:nth-child(odd) {
-            background: rgba(255,255,255,0.4);
+            background: rgba(255, 255, 255, 0.4);
         }
 
         .day-header {
@@ -139,14 +140,14 @@
             background: white;
             border-radius: 15px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border-left: 5px solid #5a67d8;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .activity-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .activity-header {
@@ -240,7 +241,7 @@
         }
 
         .resource-card {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 15px;
             backdrop-filter: blur(10px);
@@ -272,18 +273,18 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .day-header h2 {
                 font-size: 2rem;
                 flex-direction: column;
                 gap: 0.5rem;
             }
-            
+
             nav ul {
                 flex-wrap: wrap;
                 gap: 1rem;
             }
-            
+
             .activity-card {
                 padding: 1.5rem;
             }
@@ -295,12 +296,40 @@
         }
 
         /* Syntax highlighting colors */
-        .keyword { color: #f56565; }
-        .string { color: #68d391; }
-        .number { color: #63b3ed; }
-        .comment { color: #a0aec0; font-style: italic; }
+        .keyword {
+            color: #f56565;
+        }
+
+        .string {
+            color: #68d391;
+        }
+
+        .number {
+            color: #63b3ed;
+        }
+
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+
+        .reveal-btn {
+            all: unset;
+            cursor: pointer;
+            transition: scale 0.2s ease;
+        }
+
+        .reveal-btn:hover {
+            scale: 1.025;
+        }
+
+        .reveal-btn:active {
+            scale: 1;
+        }
     </style>
 </head>
+
 <body>
     <nav>
         <ul>
@@ -325,7 +354,8 @@
             <div class="day-header">
                 <h2><span class="day-emoji">🎯</span> Day 1: Introduction to Programming</h2>
                 <p class="day-description">
-                    Start your coding journey with visual programming in Scratch, then transition to Python to unlock the power of text-based programming.
+                    Start your coding journey with visual programming in Scratch, then transition to Python to unlock
+                    the power of text-based programming.
                 </p>
             </div>
 
@@ -339,10 +369,13 @@
                     <ul class="activity-list">
                         <li>Start with a pre-built Scratch sketch</li>
                         <li>Explore sprites, motion, and events</li>
-                        <li><a href="https://scratch.mit.edu/projects/editor/?tutorial=getStarted" target="_blank">Create your first interactive animation</a></li>
+                        <li><a href="https://scratch.mit.edu/projects/editor/?tutorial=getStarted"
+                                target="_blank">Create your first interactive animation</a></li>
                     </ul>
-                    <iframe src="https://scratch.mit.edu/projects/1189196473/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-                    <iframe src="https://scratch.mit.edu/projects/1189258928/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    <iframe src="https://scratch.mit.edu/projects/1189196473/embed" allowtransparency="true" width="485"
+                        height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    <iframe src="https://scratch.mit.edu/projects/1189258928/embed" allowtransparency="true" width="485"
+                        height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
                 </div>
 
                 <div class="activity-card">
@@ -350,35 +383,56 @@
                         <span class="activity-icon">🐍</span>
                         <h3>Transition to Python</h3>
                     </div>
+                    <iframe src="https://trinket.io/embed/python/af74d65f6c7c" width="100%" height="356" frameborder="0"
+                        marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
                     <p>Discover why Python is powerful and learn fundamental programming concepts with real code.</p>
                     <ul class="activity-list">
-                        <li>Why Python is powerful compared to Scratch</li>
-                        <li>Examples: Complex tasks made simple</li>
-                        <li>Introduce basics: <code>if/else</code>, <code>for</code> loops</li>
-                        <li>Activity: Number guessing game</li>
-                        <li>Activity: Drawing ASCII patterns (names, triangles)</li>
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Why Python is powerful compared to Scratch
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                Python lets you solve complex problems with fewer lines of code, supports advanced
+                                logic, and can be used for web, data science, hardware, and more. Scratch is great for
+                                learning basics, but Python unlocks real-world programming!
+                            </div>
+                        </li>
+
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Introduce basics: <code>if/else</code>, <code>for</code> loops
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <iframe src="https://trinket.io/embed/python/af74d65f6c7c" width="100%" height="356"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                            </div>
+                        </li>
+                        <li>
+
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Activity: Number guessing game
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <iframe src="https://trinket.io/embed/python/af74d65f6c7c" width="100%" height="356"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                            </div>
+                        </li>
+
+                        <li>
+                            <button class="reveal-btn"
+                                onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block');">
+                                Activity: Drawing ASCII patterns (names, triangles)
+                            </button>
+                            <div class="placeholder" style="display:none; margin-top:0.5rem;">
+                                <iframe src="https://trinket.io/embed/python/af74d65f6c7c" width="100%" height="356"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                            </div>
+                        </li>
                     </ul>
-                    
-                    <!-- <div class="code-block">
-                        <span class="language-label">Python</span>
-import random
-
-<span class="comment"># Number guessing game</span>
-secret = random.randint(<span class="number">1</span>, <span class="number">100</span>)
-<span class="keyword">print</span>(<span class="string">"Guess my number (1-100)!"</span>)
-
-<span class="keyword">while</span> <span class="keyword">True</span>:
-    guess = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Your guess: "</span>))
-    <span class="keyword">if</span> guess == secret:
-        <span class="keyword">print</span>(<span class="string">"🎉 You won!"</span>)
-        <span class="keyword">break</span>
-    <span class="keyword">elif</span> guess < secret:
-        <span class="keyword">print</span>(<span class="string">"Too low! 📈"</span>)
-    <span class="keyword">else</span>:
-        <span class="keyword">print</span>(<span class="string">"Too high! 📉"</span>)
-                    </div> -->
-                    
-                    <iframe src="https://trinket.io/embed/python/af74d65f6c7c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -389,7 +443,8 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
             <div class="day-header">
                 <h2><span class="day-emoji">🌐</span> Day 2: Web & JavaScript</h2>
                 <p class="day-description">
-                    Explore the web platform, learn HTML/CSS basics, and discover the magic of JavaScript for interactive experiences and automation.
+                    Explore the web platform, learn HTML/CSS basics, and discover the magic of JavaScript for
+                    interactive experiences and automation.
                 </p>
             </div>
 
@@ -406,30 +461,32 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
                         <li>Activity: Modify a webpage using DevTools</li>
                         <li>Change colors, text, and layouts in real-time</li>
                     </ul>
-                    
+
                     <div class="code-block">
                         <span class="language-label">HTML + CSS</span>
-<span class="keyword">&lt;!DOCTYPE html&gt;</span>
-<span class="keyword">&lt;html&gt;</span>
-<span class="keyword">&lt;head&gt;</span>
-    <span class="keyword">&lt;style&gt;</span>
-        .<span class="string">game-button</span> {
-            background: <span class="string">linear-gradient(45deg, #ff6b6b, #4ecdc4)</span>;
-            border: <span class="string">none</span>;
-            padding: <span class="string">15px 30px</span>;
-            border-radius: <span class="string">25px</span>;
-            color: <span class="string">white</span>;
-            font-size: <span class="string">18px</span>;
-            cursor: <span class="string">pointer</span>;
-        }
-    <span class="keyword">&lt;/style&gt;</span>
-<span class="keyword">&lt;/head&gt;</span>
-<span class="keyword">&lt;body&gt;</span>
-    <span class="keyword">&lt;button</span> <span class="string">class=</span><span class="string">"game-button"</span><span class="keyword">&gt;</span>Click Me!<span class="keyword">&lt;/button&gt;</span>
-<span class="keyword">&lt;/body&gt;</span>
-<span class="keyword">&lt;/html&gt;</span>
+                        <span class="keyword">&lt;!DOCTYPE html&gt;</span>
+                        <span class="keyword">&lt;html&gt;</span>
+                        <span class="keyword">&lt;head&gt;</span>
+                        <span class="keyword">&lt;style&gt;</span>
+                        .<span class="string">game-button</span> {
+                        background: <span class="string">linear-gradient(45deg, #ff6b6b, #4ecdc4)</span>;
+                        border: <span class="string">none</span>;
+                        padding: <span class="string">15px 30px</span>;
+                        border-radius: <span class="string">25px</span>;
+                        color: <span class="string">white</span>;
+                        font-size: <span class="string">18px</span>;
+                        cursor: <span class="string">pointer</span>;
+                        }
+                        <span class="keyword">&lt;/style&gt;</span>
+                        <span class="keyword">&lt;/head&gt;</span>
+                        <span class="keyword">&lt;body&gt;</span>
+                        <span class="keyword">&lt;button</span> <span class="string">class=</span><span
+                            class="string">"game-button"</span><span class="keyword">&gt;</span>Click Me!<span
+                            class="keyword">&lt;/button&gt;</span>
+                        <span class="keyword">&lt;/body&gt;</span>
+                        <span class="keyword">&lt;/html&gt;</span>
                     </div>
-                    
+
                     <div class="placeholder">
                         [PLACEHOLDER: Browser Game Demo]
                     </div>
@@ -447,25 +504,30 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
                         <li>Fun hack: "Cheat a typing speed test" with JS</li>
                         <li>Understand DOM manipulation and events</li>
                     </ul>
-                    
+
                     <div class="code-block">
                         <span class="language-label">JavaScript</span>
-<span class="comment">// Fun typing speed hack</span>
-<span class="keyword">const</span> textToType = <span class="string">"The quick brown fox jumps over the lazy dog"</span>;
-<span class="keyword">const</span> inputField = <span class="keyword">document</span>.<span class="keyword">querySelector</span>(<span class="string">'input[type="text"]'</span>);
+                        <span class="comment">// Fun typing speed hack</span>
+                        <span class="keyword">const</span> textToType = <span class="string">"The quick brown fox jumps
+                            over the lazy dog"</span>;
+                        <span class="keyword">const</span> inputField = <span class="keyword">document</span>.<span
+                            class="keyword">querySelector</span>(<span class="string">'input[type="text"]'</span>);
 
-<span class="keyword">let</span> index = <span class="number">0</span>;
-<span class="keyword">const</span> typeInterval = <span class="keyword">setInterval</span>(() => {
-    <span class="keyword">if</span> (index < textToType.<span class="keyword">length</span>) {
-        inputField.<span class="keyword">value</span> += textToType[index];
-        index++;
-    } <span class="keyword">else</span> {
-        <span class="keyword">clearInterval</span>(typeInterval);
-        <span class="keyword">console</span>.<span class="keyword">log</span>(<span class="string">"🚀 Superhuman typing complete!"</span>);
-    }
-}, <span class="number">50</span>); <span class="comment">// 50ms between each character</span>
+                        <span class="keyword">let</span> index = <span class="number">0</span>;
+                        <span class="keyword">const</span> typeInterval = <span class="keyword">setInterval</span>(() =>
+                        {
+                        <span class="keyword">if</span> (index < textToType.<span class="keyword">length</span>) {
+                            inputField.<span class="keyword">value</span> += textToType[index];
+                            index++;
+                            } <span class="keyword">else</span> {
+                            <span class="keyword">clearInterval</span>(typeInterval);
+                            <span class="keyword">console</span>.<span class="keyword">log</span>(<span
+                                class="string">"🚀 Superhuman typing complete!"</span>);
+                            }
+                            }, <span class="number">50</span>); <span class="comment">// 50ms between each
+                                character</span>
                     </div>
-                    
+
                     <div class="placeholder">
                         [PLACEHOLDER: Interactive Console Demo]
                     </div>
@@ -483,7 +545,7 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
                         <li>Simple LED blinking example</li>
                         <li>Understanding digital pins and signals</li>
                     </ul>
-                    
+
                     <div class="placeholder">
                         [PLACEHOLDER: Arduino Simulator Demo]
                     </div>
@@ -497,7 +559,8 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
             <div class="day-header">
                 <h2><span class="day-emoji">🔌</span> Day 3: Hardware with ESP32</h2>
                 <p class="day-description">
-                    Bring your code to life with physical hardware! Learn to control LEDs, read sensors, and create interactive IoT projects.
+                    Bring your code to life with physical hardware! Learn to control LEDs, read sensors, and create
+                    interactive IoT projects.
                 </p>
             </div>
 
@@ -514,28 +577,31 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
                         <li>Try different LED patterns and timings</li>
                         <li>Understanding digital vs analog signals</li>
                     </ul>
-                    
+
                     <div class="code-block">
                         <span class="language-label">C++ (Arduino)</span>
-<span class="keyword">#define</span> LED_PIN <span class="number">2</span>
-<span class="keyword">#define</span> LDR_PIN <span class="number">A0</span>
+                        <span class="keyword">#define</span> LED_PIN <span class="number">2</span>
+                        <span class="keyword">#define</span> LDR_PIN <span class="number">A0</span>
 
-<span class="keyword">void</span> <span class="string">setup</span>() {
-  <span class="keyword">pinMode</span>(LED_PIN, OUTPUT);
-  <span class="keyword">Serial</span>.<span class="string">begin</span>(<span class="number">115200</span>);
-}
+                        <span class="keyword">void</span> <span class="string">setup</span>() {
+                        <span class="keyword">pinMode</span>(LED_PIN, OUTPUT);
+                        <span class="keyword">Serial</span>.<span class="string">begin</span>(<span
+                            class="number">115200</span>);
+                        }
 
-<span class="keyword">void</span> <span class="string">loop</span>() {
-  <span class="keyword">int</span> lightLevel = <span class="keyword">analogRead</span>(LDR_PIN);
-  
-  <span class="keyword">if</span> (lightLevel < <span class="number">500</span>) {
-    <span class="keyword">digitalWrite</span>(LED_PIN, HIGH); <span class="comment">// Turn on in darkness</span>
-  } <span class="keyword">else</span> {
-    <span class="keyword">digitalWrite</span>(LED_PIN, LOW);  <span class="comment">// Turn off in light</span>
-  }
-  
-  <span class="keyword">delay</span>(<span class="number">100</span>);
-}
+                        <span class="keyword">void</span> <span class="string">loop</span>() {
+                        <span class="keyword">int</span> lightLevel = <span class="keyword">analogRead</span>(LDR_PIN);
+
+                        <span class="keyword">if</span> (lightLevel < <span class="number">500</span>) {
+                            <span class="keyword">digitalWrite</span>(LED_PIN, HIGH); <span class="comment">// Turn on
+                                in darkness</span>
+                            } <span class="keyword">else</span> {
+                            <span class="keyword">digitalWrite</span>(LED_PIN, LOW); <span class="comment">// Turn off
+                                in light</span>
+                            }
+
+                            <span class="keyword">delay</span>(<span class="number">100</span>);
+                            }
                     </div>
                 </div>
 
@@ -566,26 +632,32 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
                         <li>Let people pick which audio to play remotely</li>
                         <li>Build a complete IoT music system</li>
                     </ul>
-                    
+
                     <div class="code-block">
                         <span class="language-label">C++ (Arduino)</span>
-<span class="keyword">#include</span> <span class="string">&lt;WiFi.h&gt;</span>
-<span class="keyword">#define</span> BUZZER_PIN <span class="number">25</span>
+                        <span class="keyword">#include</span> <span class="string">&lt;WiFi.h&gt;</span>
+                        <span class="keyword">#define</span> BUZZER_PIN <span class="number">25</span>
 
-<span class="comment">// Musical notes (frequencies in Hz)</span>
-<span class="keyword">const</span> <span class="keyword">int</span> C4 = <span class="number">262</span>, D4 = <span class="number">294</span>, E4 = <span class="number">330</span>, F4 = <span class="number">349</span>;
+                        <span class="comment">// Musical notes (frequencies in Hz)</span>
+                        <span class="keyword">const</span> <span class="keyword">int</span> C4 = <span
+                            class="number">262</span>, D4 = <span class="number">294</span>, E4 = <span
+                            class="number">330</span>, F4 = <span class="number">349</span>;
 
-<span class="keyword">void</span> <span class="string">playTwinkleTwinkle</span>() {
-  <span class="keyword">int</span> melody[] = {C4, C4, G4, G4, A4, A4, G4};
-  <span class="keyword">int</span> durations[] = {<span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">2</span>};
-  
-  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < <span class="number">7</span>; i++) {
-    <span class="keyword">tone</span>(BUZZER_PIN, melody[i], <span class="number">1000</span> / durations[i]);
-    <span class="keyword">delay</span>(<span class="number">1200</span> / durations[i]);
-  }
-}
+                        <span class="keyword">void</span> <span class="string">playTwinkleTwinkle</span>() {
+                        <span class="keyword">int</span> melody[] = {C4, C4, G4, G4, A4, A4, G4};
+                        <span class="keyword">int</span> durations[] = {<span class="number">4</span>, <span
+                            class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span
+                            class="number">4</span>, <span class="number">4</span>, <span class="number">2</span>};
+
+                        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span
+                            class="number">0</span>; i < <span class="number">7</span>; i++) {
+                            <span class="keyword">tone</span>(BUZZER_PIN, melody[i], <span class="number">1000</span> /
+                            durations[i]);
+                            <span class="keyword">delay</span>(<span class="number">1200</span> / durations[i]);
+                            }
+                            }
                     </div>
-                    
+
                     <div class="placeholder">
                         [PLACEHOLDER: ESP32 Live Demo]
                     </div>
@@ -654,7 +726,7 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navItems = document.querySelectorAll('nav a');
-            
+
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 100;
@@ -672,4 +744,5 @@ secret = random.randint(<span class="number">1</span>, <span class="number">100<
         });
     </script>
 </body>
+
 </html>
