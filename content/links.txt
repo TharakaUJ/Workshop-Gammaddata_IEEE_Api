@@ -1,0 +1,11 @@
+Hello_world: https://wokwi.com/projects/441057980977802241
+Blink: https://wokwi.com/projects/343686861529547347
+Buzzer: https://wokwi.com/projects/440843342280173569
+DHT11(notice in the simulatio it's a different version): https://wokwi.com/projects/440842750512077825
+PushAndPlay: https://wokwi.com/projects/441058892046169089
+BinaryCounter: https://wokwi.com/projects/441060171390070785
+
+https://www.tinkercad.com/things/ltYgUFNJvYJ-basic-8-leds-knight-rider?sharecode=3EFrbo3OiiLWgsFPcd_sLHpzV6-v3bQUlzskCRbCQho
+https://www.tinkercad.com/things/0Nhlcur6VhK-led-controlling-basic?sharecode=sOy1V0CIwsoaymMaAzpCQTLKgNyjy9fn-C9R79_RQfg
+https://www.tinkercad.com/things/19jaPAz4rSi-ultrasonic-range-finder?sharecode=2DKNTdITCpdPKxY5x0omY6VlPbSBoFqXCNiETplAutM
+https://www.tinkercad.com/things/eoRi3nysnKV-servo-motor-control?sharecode=MArVU7gtSq2oR9MH6gZM5H8gERW4Qdnuy0tLBV0ZNGQ
